@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SciCalX</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+
+<!-- Navigation Panel -->
+<div class="navigation-panel">
+  <button id="open-scientific-notation" class="btn" type="button">Scientific Notation</button>
+  <button id="open-unit-converter" class="btn" type="button">Unit Converter</button>
+  <button id="theme-toggle" class="btn" type="button">Toggle Theme</button>
+</div>
+
+  <div class="main-container">
+     <!-- Calculator Section -->
+     <div class="calculator-container">
+      <div class="display" id="display" contenteditable="true">0</div>
+      <div class="buttons-grid">
+        <!-- First Row -->
+        <button class="btn" data-value="Math.PI">π</button>
+        <button class="btn" data-value="Math.E">e</button>
+        <button class="btn" data-value="Math.sqrt(">√</button>
+        <button class="btn" data-value="Math.pow(">^</button>
+
+        <!-- Second Row -->
+        <button class="btn" data-value="Math.sin(">sin</button>
+        <button class="btn" data-value="Math.cos(">cos</button>
+        <button class="btn" data-value="Math.tan(">tan</button>
+        <button class="btn" data-value="/">÷</button>
+
+        <!-- Third Row -->
+        <button class="btn" data-value="Math.log10(">log</button>
+        <button class="btn" data-value="Math.log(">ln</button>
+        <button class="btn" data-value="Math.exp(">exp</button>
+        <button class="btn" data-value="*">×</button>
+
+        <!-- Fourth Row -->
+        <button class="btn" data-value="7">7</button>
+        <button class="btn" data-value="8">8</button>
+        <button class="btn" data-value="9">9</button>
+        <button class="btn" data-value="-">−</button>
+
+        <!-- Fifth Row -->
+        <button class="btn" data-value="4">4</button>
+        <button class="btn" data-value="5">5</button>
+        <button class="btn" data-value="6">6</button>
+        <button class="btn" data-value="+">+</button>
+
+        <!-- Sixth Row -->
+        <button class="btn" data-value="1">1</button>
+        <button class="btn" data-value="2">2</button>
+        <button class="btn" data-value="3">3</button>
+        <button class="btn" id="clear" data-value="AC">AC</button>
+
+        <!-- Last Row -->
+        <button class="btn" data-value="0">0</button>
+        <button class="btn" data-value=".">.</button>
+        <button class="btn" data-value=")">)</button>
+        <button class="btn" data-value="=">=</button>
+      </div>
+    </div>
+
+
+
+    <!-- Equations Section -->
+    <div class="equations-container">
+      <!-- Physics -->
+      <div class="section">Physics</div>
+
+      <details open>
+        <summary>Motion</summary>
+        <div class="equation">\( v = u + at \)</div>
+        <div class="equation">\( s = ut + \frac{1}{2}at^2 \)</div>
+        <div class="equation">\( v^2 = u^2 + 2as \)</div>
+      </details>
+
+      <details>
+        <summary>Newton’s Laws</summary>
+        <div class="equation">\( F = ma \)</div>
+        <div class="equation">\( \sum F = 0 \) (1st Law)</div>
+      </details>
+
+      <details>
+        <summary>Circular Motion</summary>
+        <div class="equation">\( a_c = \frac{v^2}{r} \)</div>
+        <div class="equation">\( T = \frac{2\pi r}{v} \)</div>
+      </details>
+
+      <details>
+        <summary>Forces & Dynamics</summary>
+        <div class="equation">\( W = Fd\cos\theta \)</div>
+      </details>
+
+      <details>
+        <summary>Friction</summary>
+        <div class="equation">\( f = \mu N \)</div>
+      </details>
+
+      <details>
+        <summary>Centripetal Force</summary>
+        <div class="equation">\( F_c = \frac{mv^2}{r} \)</div>
+      </details>
+
+      <details>
+        <summary>Energy</summary>
+        <div class="equation">\( KE = \frac{1}{2}mv^2 \)</div>
+        <div class="equation">\( PE = mgh \)</div>
+        <div class="equation">\( W = \Delta KE \)</div>
+      </details>
+
+      <details>
+        <summary>Thermodynamics</summary>
+        <div class="equation">\( Q = mc\Delta T \)</div>
+        <div class="equation">\( PV = nRT \)</div>
+      </details>
+
+      <details>
+        <summary>Waves</summary>
+        <div class="equation">\( v = f\lambda \)</div>
+        <div class="equation">\( \lambda_n = \frac{2L}{n} \)</div>
+      </details>
+
+      <details>
+        <summary>Electricity</summary>
+        <div class="equation">Ohm’s Law: \( V = IR \)</div>
+        <div class="equation">\( V = \epsilon - Ir \)</div>
+        <div class="equation">\( C = \frac{Q}{V} \)</div>
+      </details>
+
+      <details>
+        <summary>Magnetism</summary>
+        <div class="equation">Lorentz Force: \( F = q(E + vB) \)</div>
+        <div class="equation">Ampere's Law: \( \oint B \cdot dl = \mu_0 I \)</div>
+      </details>
+
+      <details>
+        <summary>Modern Physics</summary>
+        <div class="equation">\( E = mc^2 \)</div>
+        <div class="equation">Photoelectric: \( E = hf - \phi \)</div>
+      </details>
+
+      <!-- Chemistry -->
+      <div class="section">Chemistry</div>
+
+      <details>
+        <summary>Gas Laws</summary>
+        <div class="equation">\( PV = nRT \)</div>
+        <div class="equation">\( P_1V_1 = P_2V_2 \)</div>
+      </details>
+
+      <details>
+        <summary>Moles and Stoichiometry</summary>
+        <div class="equation">\( n = \frac{m}{M} \)</div>
+        <div class="equation">\( C = \frac{n}{V} \)</div>
+      </details>
+
+      <details>
+        <summary>Reaction Rates</summary>
+        <div class="equation">\( \text{Rate} = k[A]^m[B]^n \)</div>
+      </details>
+
+      <details>
+        <summary>pH, Ka, Kb</summary>
+        <div class="equation">\( \text{pH} = -\log[H^+] \)</div>
+        <div class="equation">\( K_w = K_a K_b \)</div>
+      </details>
+
+      <details>
+        <summary>Electrochemistry</summary>
+        <div class="equation">\( E = E^\circ - \frac{0.0591}{n} \log Q \)</div>
+      </details>
+
+      <!-- Biology -->
+      <div class="section">Biology</div>
+
+      <details>
+        <summary>Respiration</summary>
+        <div class="equation">\( C_6H_{12}O_6 + 6O_2 \rightarrow 6CO_2 + 6H_2O + ATP \)</div>
+      </details>
+
+      <details>
+        <summary>Photosynthesis</summary>
+        <div class="equation">\( 6CO_2 + 6H_2O \rightarrow C_6H_{12}O_6 + 6O_2 \)</div>
+      </details>
+
+      <details>
+        <summary>Enzyme Kinetics</summary>
+        <div class="equation">\( v = \frac{V_{max}[S]}{K_m + [S]} \)</div>
+      </details>
+
+      <details>
+        <summary>Genetic Ratios</summary>
+        <div class="equation">Monohybrid: \( 3:1 \), Dihybrid: \( 9:3:3:1 \)</div>
+      </details>
+
+      <!-- Math -->
+      <div class="section">Math</div>
+
+      <details>
+        <summary>Algebra</summary>
+        <div class="equation">Quadratic: \( ax^2 + bx + c = 0 \)</div>
+        <div class="equation">Discriminant: \( D = b^2 - 4ac \)</div>
+      </details>
+
+      <details>
+        <summary>Calculus</summary>
+        <div class="equation">Derivative: \( f'(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h} \)</div>
+        <div class="equation">Integral: \( \int f(x)\,dx \)</div>
+      </details>
+
+      <details>
+        <summary>Trigonometry</summary>
+        <div class="equation">\( \sin^2 x + \cos^2 x = 1 \)</div>
+        <div class="equation">\( \tan x = \frac{\sin x}{\cos x} \)</div>
+      </details>
+
+      <details>
+        <summary>Geometry</summary>
+        <div class="equation">Pythagorean: \( a^2 + b^2 = c^2 \)</div>
+        <div class="equation">Circle: \( A = \pi r^2 \)</div>
+      </details>
+
+      <details>
+        <summary>Probability & Statistics</summary>
+        <div class="equation">\( P(A \cap B) = P(A)P(B|A) \)</div>
+        <div class="equation">Mean: \( \mu = \frac{1}{n} \sum x_i \)</div>
+      </details>
+    </div>
+  </div>
+
+  <script src="calculator.js"></script>
+  <script src="navigation.js"></script>
+  <script src="theme.js"></script>
+</body>
+</html>

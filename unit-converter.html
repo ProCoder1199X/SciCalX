@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit Converter</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #1e1e1e;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .main-container {
+      background-color: #2b2b2b;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      width: 600px;
+      height: 90vh;
+      overflow-y: auto;
+      animation: slideInUp 1s ease-out;
+    }
+    h1 {
+      text-align: center;
+      color: #66ccff;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .converter {
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #333;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease-in-out;
+    }
+    label {
+      font-size: 1rem;
+      color: #fff;
+    }
+    input {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #444;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 1rem;
+      background-color: #5cb85c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    button:hover {
+      background-color: #4cae4c;
+      transform: scale(1.05);
+    }
+    button:active {
+      background-color: #3e8e41;
+      transform: scale(0.95);
+    }
+    .toggle-btn {
+      margin-top: 10px;
+      background-color: #007bff;
+    }
+    p {
+      font-size: 1rem;
+      color: #ffcc66;
+      margin-top: 5px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes slideInUp {
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1>Unit Converter</h1>
+
+    <!-- Length Converters -->
+    <div class="converter">
+      <label id="length-km-m-label">Kilometers (km) to Meters (m)</label>
+      <input id="length-km-m-input" type="number" placeholder="Enter value" />
+      <button onclick="convert_length_km_m()">Convert</button>
+      <p id="length-km-m-result"></p>
+      <button class="toggle-btn" onclick="toggle_length_km_m()">Switch to Meters (m) to Kilometers (km)</button>
+    </div>
+
+    <div class="converter">
+      <label id="length-km-mm-label">Kilometers (km) to Millimeters (mm)</label>
+      <input id="length-km-mm-input" type="number" placeholder="Enter value" />
+      <button onclick="convert_length_km_mm()">Convert</button>
+      <p id="length-km-mm-result"></p>
+      <button class="toggle-btn" onclick="toggle_length_km_mm()">Switch to Millimeters (mm) to Kilometers (km)</button>
+    </div>
+
+    <div class="converter">
+      <label id="area-km2-mi2-label">Square Kilometers (km²) to Square Miles (mi²)</label>
+      <input id="area-km2-mi2-input" type="number" placeholder="Enter value" />
+      <button onclick="convert_area_km2_mi2()">Convert</button>
+      <p id="area-km2-mi2-result"></p>
+      <button class="toggle-btn" onclick="toggle_area_km2_mi2()">Switch to Square Miles (mi²) to Square Kilometers (km²)</button>
+    </div>
+  </div>
+
+ 
+
+
+  <script>
+    // Conversion states
+    let lengthKmMConversion = "km-to-m";
+    let lengthKmMmConversion = "km-to-mm";
+    let areaKm2Mi2Conversion = "km2-to-mi2";
+
+    // Length: Kilometers ↔ Meters
+    function convert_length_km_m() {
+      const input = parseFloat(document.getElementById("length-km-m-input").value);
+      const resultElement = document.getElementById("length-km-m-result");
+      if (isNaN(input)) {
+        resultElement.textContent = "Please enter a valid number.";
+        return;
+      }
+      let result;
+      if (lengthKmMConversion === "km-to-m") {
+        result = input * 1000; // Kilometers to Meters
+        resultElement.textContent = `${input} km = ${result.toFixed(2)} m`;
+      } else {
+        result = input / 1000; // Meters to Kilometers
+        resultElement.textContent = `${input} m = ${result.toFixed(2)} km`;
+      }
+    }
+
+    function toggle_length_km_m() {
+      const label = document.getElementById("length-km-m-label");
+      const toggleButton = document.querySelector("#length-km-m-label + input + button + p + button");
+      if (lengthKmMConversion === "km-to-m") {
+        lengthKmMConversion = "m-to-km";
+        label.textContent = "Meters (m) to Kilometers (km)";
+        toggleButton.textContent = "Switch to Kilometers (km) to Meters (m)";
+      } else {
+        lengthKmMConversion = "km-to-m";
+        label.textContent = "Kilometers (km) to Meters (m)";
+        toggleButton.textContent = "Switch to Meters (m) to Kilometers (km)";
+      }
+    }
+
+    // Length: Kilometers ↔ Millimeters
+    function convert_length_km_mm() {
+      const input = parseFloat(document.getElementById("length-km-mm-input").value);
+      const resultElement = document.getElementById("length-km-mm-result");
+      if (isNaN(input)) {
+        resultElement.textContent = "Please enter a valid number.";
+        return;
+      }
+      let result;
+      if (lengthKmMmConversion === "km-to-mm") {
+        result = input * 1e6; // Kilometers to Millimeters
+        resultElement.textContent = `${input} km = ${result.toFixed(0)} mm`;
+      } else {
+        result = input / 1e6; // Millimeters to Kilometers
+        resultElement.textContent = `${input} mm = ${result.toFixed(6)} km`;
+      }
+    }
+
+    function toggle_length_km_mm() {
+      const label = document.getElementById("length-km-mm-label");
+      const toggleButton = document.querySelector("#length-km-mm-label + input + button + p + button");
+      if (lengthKmMmConversion === "km-to-mm") {
+        lengthKmMmConversion = "mm-to-km";
+        label.textContent = "Millimeters (mm) to Kilometers (km)";
+        toggleButton.textContent = "Switch to Kilometers (km) to Millimeters (mm)";
+      } else {
+        lengthKmMmConversion = "km-to-mm";
+        label.textContent = "Kilometers (km) to Millimeters (mm)";
+        toggleButton.textContent = "Switch to Millimeters (mm) to Kilometers (km)";
+      }
+    }
+
+    // Area: Square Kilometers ↔ Square Miles
+    function convert_area_km2_mi2() {
+      const input = parseFloat(document.getElementById("area-km2-mi2-input").value);
+      const resultElement = document.getElementById("area-km2-mi2-result");
+      if (isNaN(input)) {
+        resultElement.textContent = "Please enter a valid number.";
+        return;
+      }
+      let result;
+      if (areaKm2Mi2Conversion === "km2-to-mi2") {
+        result = input * 0.386102; // Square Kilometers to Square Miles
+        resultElement.textContent = `${input} km² = ${result.toFixed(4)} mi²`;
+      } else {
+        result = input / 0.386102; // Square Miles to Square Kilometers
+        resultElement.textContent = `${input} mi² = ${result.toFixed(4)} km²`;
+      }
+    }
+
+    function toggle_area_km2_mi2() {
+      const label = document.getElementById("area-km2-mi2-label");
+      const toggleButton = document.querySelector("#area-km2-mi2-label + input + button + p + button");
+      if (areaKm2Mi2Conversion === "km2-to-mi2") {
+        areaKm2Mi2Conversion = "mi2-to-km2";
+        label.textContent = "Square Miles (mi²) to Square Kilometers (km²)";
+        toggleButton.textContent = "Switch to Square Kilometers (km²) to Square Miles (mi²)";
+      } else {
+        areaKm2Mi2Conversion = "km2-to-mi2";
+        label.textContent = "Square Kilometers (km²) to Square Miles (mi²)";
+        toggleButton.textContent = "Switch to Square Miles (mi²) to Square Kilometers (km²)";
+      }
+    }
+  </script>
+</body>
+</html>

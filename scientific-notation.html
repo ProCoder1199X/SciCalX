@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Notation Converter</title>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #1e1e1e;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .main-container {
+      background-color: #2b2b2b;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      width: 400px;
+      animation: slideInUp 1s ease-out;
+    }
+
+    h1 {
+      text-align: center;
+      color: #66ccff;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .converter {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #444;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 1rem;
+      background-color: #5cb85c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #4cae4c;
+      transform: scale(1.05);
+    }
+
+    button:active {
+      background-color: #3e8e41;
+      transform: scale(0.95);
+    }
+
+    p {
+      font-size: 1rem;
+      color: #ffcc66;
+      margin-top: 5px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1>Scientific Notation Converter</h1>
+    <div class="converter">
+      <label>Number to Scientific Notation:</label>
+      <input type="number" id="number" placeholder="Enter a number">
+      <button onclick="convertToScientific()">Convert</button>
+      <p id="scientific-result"></p>
+
+      <label>Scientific Notation to Number:</label>
+      <input type="text" id="scientific" placeholder="Enter scientific notation (e.g., $3.00 \\times 10^8$)">
+      <button onclick="convertToNumber()">Convert</button>
+      <p id="number-result"></p>
+
+      <label>Add Power of Ten:</label>
+      <input type="number" id="power" placeholder="Enter exponent">
+      <button onclick="addPowerOfTen()">Add Power</button>
+      <p id="power-result"></p>
+    </div>
+  </div>
+
+  <script>
+    // Convert Number to Scientific Notation
+    function convertToScientific() {
+      const number = parseFloat(document.getElementById('number').value);
+      if (isNaN(number)) {
+        document.getElementById('scientific-result').textContent = "Invalid input";
+        return;
+      }
+      const exponent = Math.floor(Math.log10(Math.abs(number)));
+      const mantissa = number / Math.pow(10, exponent);
+      const result = `${mantissa.toFixed(2)} \\times 10^{${exponent}}`;
+      document.getElementById('scientific-result').innerHTML = `$${result}$`;
+      MathJax.typeset(); // Render MathJax
+    }
+
+    // Convert Scientific Notation to Number
+    function convertToNumber() {
+      const scientific = document.getElementById('scientific').value;
+      const match = scientific.match(/^([\d.]+)\\times10\^(-?\d+)$/);
+      if (!match) {
+        document.getElementById('number-result').textContent = "Invalid input";
+        return;
+      }
+      const mantissa = parseFloat(match[1]);
+      const exponent = parseInt(match[2], 10);
+      const result = mantissa * Math.pow(10, exponent);
+      document.getElementById('number-result').textContent = `${scientific} = ${result}`;
+    }
+
+    // Add Power of Ten
+    function addPowerOfTen() {
+      const power = parseInt(document.getElementById('power').value, 10);
+      if (isNaN(power)) {
+        document.getElementById('power-result').textContent = "Invalid input";
+        return;
+      }
+      const result = `10^{${power}}`;
+      document.getElementById('power-result').innerHTML = `$${result}$`;
+      MathJax.typeset(); // Render MathJax
+    }
+  </script>
+</body>
+</html>
