@@ -1,11 +1,16 @@
-# SciCalX v1.0 Alpha
-SciCalX is a feature-packed scientific calculator designed to provide an easy-to-use interface for performing various calculations in physics, chemistry, biology, and mathematics. It includes a scientific notation converter, fundamental equations, and support for smooth animations.
 
-## Features:
+
+![437500379-b501488e-d636-437d-9fd8-088ea2004ff2](https://github.com/user-attachments/assets/52dfe798-f4d1-473f-b9a3-14db202f0398)
+
+# SciCalX 
+SciCalX is a feature-packed scientific calculator designed to provide an easy-to-use interface for performing various calculations in physics, chemistry, biology, and mathematics. It includes a scientific notation converter, fundamental equations, and support for smooth animations. I didn't find any app like i wanted, so i made myself.
+
+
+## Features
 
  - Scientific calculator with basic and advanced operations.
 
- - Unit converter with support (only few)
+ - Unit converter 
 
  - Physics, Chemistry, Biology, and Math fundamental equations.
 
@@ -15,33 +20,13 @@ SciCalX is a feature-packed scientific calculator designed to provide an easy-to
 
 - Fully functional on Windows (with an easy-to-install .exe).
 
-- Alpha version with continuous updates to come!
-- Scientific Notation converter 
 
 # 📦 Installation
-Download the latest release from the Releases page.
+- Download the latest release from the Releases page. (Use the mediafire links)
 
-Run the installer (SciCalX Setup.exe).
+- Run the installer (SciCalX Setup.exe).
 
-After installation, search for SciCalX in the Start menu or desktop shortcut to launch the app.
-
-# 🛠️ Features
-**1. Scientific Calculator:**
-Perform basic and advanced calculations.
-
-Supports mathematical operations including addition, subtraction, multiplication, division, and more.
-
-**2. Unit Converter:**
-Convert between various units in categories like distance, weight, temperature, and more (30+ units supported!).
-
-**3. Fundamental Equations:**
-Pre-loaded physics, chemistry, biology, and math equations for quick reference and calculations.
-
- **4. Theme Toggle:**
-Switch between a Dark and Light theme to suit your preference.
-
-**S. Scientific Notation Converter**:
-to convert big numbers (eg. 300000) to scientific representation (3x10^8)
+- After installation, search for SciCalX in the Start menu or desktop shortcut to launch the app.
 
 
 # 🔧 Usage
@@ -69,7 +54,7 @@ Once installed, you can:
 This project is licensed under the Custom License - see the LICENSE file for details.
 
 # 📱 Contact
-## Creator: Dheeraj Kumar.N
+###  Creator: Dheeraj Kumar.N
 
 ### GitHub: https://github.com/ProCoder1199X
 ### Email: dheeraj1018279@gmail.com
