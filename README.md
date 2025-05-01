@@ -14,7 +14,7 @@ SciCalX is a feature-packed scientific calculator designed to provide an easy-to
 
  - Physics, Chemistry, Biology, and Math fundamental equations.
 
-- Dark and Light theme toggle for UI customization.
+- Themes
 
 - MathJax integration for displaying complex equations.
 
