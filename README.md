@@ -32,13 +32,14 @@ SciCalX is a feature-packed scientific calculator designed to provide an easy-to
 # 🔧 Usage
 Once installed, you can:
 
-- Use the calculator by typing in numbers and pressing the buttons.
+- Use the calculator. It has both simple addition, and multiplication as well as complex trigonometric functions, etc.
 
-- Access the equations via the "Equations" tab.
+- Access the equations via the "Equations" tab and use the 200+ equations library for reference. 
 
-- Use the unit converter by selecting the category and unit you wish to convert.
+- Use the unit converter by selecting the category and unit you wish to convert. ( 70+ units supported)
 
-- Toggle between light and dark themes by clicking the theme switch button.
+- Use the plug-in manager to upload/remove and enable/disable plug-ins.
+
 
 
 # Making Plug-ins and Plug-in system information (For beta version):
