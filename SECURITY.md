@@ -5,8 +5,9 @@
 | Version | Supported          |
 |---------|--------------------|
 | 1.0.0-alpha.1 | ✅ |
+|1.0.0-beta.1 | ✅️ | 
 
-Only the latest Alpha version is currently supported. Future stable versions will have wider support.
+The latest versions Alpha and Beta are  currently supported. Future stable versions will have wider support.
 
 ## Reporting a Vulnerability
 
