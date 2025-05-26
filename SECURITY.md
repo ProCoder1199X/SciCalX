@@ -30,18 +30,12 @@ You will receive a response within **7 days**.
 ---
 
 ## Security Notes
-
-- SciCalX is currently an Alpha product.
+- Alpha and beta versions may have some problems and no longer supported. 
 - The web version is **read-only** and does not collect or store any user data.
 - The desktop version is **local only** and does not transmit data over the internet.
 - Always download SciCalX only from the [official GitHub releases](https://github.com/ProCoder1199X/SciCalX/releases) page.
 
 ---
 
-## Future Plans
-
-- Regular security audits after Beta stage.
-- Stronger Electron security practices (contextIsolation, sandbox, etc.) in upcoming versions.
-- Option to submit anonymous vulnerability reports.
 
 Thank you for helping make SciCalX safer! 🛡️
