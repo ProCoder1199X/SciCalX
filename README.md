@@ -176,7 +176,7 @@ This project is licensed under the Custom License - see the LICENSE file for det
 ## 📱 Contact
 ###  Creator: Dheeraj Kumar.N
 
-GitHub: https://github.com/ProCoder1199X
-Email: dheeraj1018279@gmail.com
-website: https://procoder1199x.github.io
+#### GitHub: https://github.com/ProCoder1199X
+#### Email: dheeraj1018279@gmail.com
+#### website: https://procoder1199x.github.io
 
