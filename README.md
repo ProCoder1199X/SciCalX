@@ -174,9 +174,10 @@ Here’s an example of a theme plug-in for Oceanic:
 This project is licensed under the Custom License - see the LICENSE file for details.
 
 ## 📱 Contact
-###  Creator: Dheeraj Kumar.N
+###  Creator: DheerajKumar.
 
 #### GitHub: https://github.com/ProCoder1199X
 #### Email: dheeraj1018279@gmail.com
 #### website: https://procoder1199x.github.io
+
 
