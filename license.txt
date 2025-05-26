@@ -1,4 +1,4 @@
-SciCalX v1.0 Alpha - License Agreement
+SciCalX  - License Agreement
 (c) 2025 DheerajKumar.N (ProCoder1199X)
 Repository: https://github.com/ProCoder1199X/SciCalX
 
@@ -6,8 +6,7 @@ Permission is hereby granted, free of charge, to any user of this software,
 to use, copy, modify, and distribute the SciCalX software for personal,
 educational, or internal business purposes, subject to the following conditions:
 
-1. This software is provided as an ALPHA version, which means it is under
-   active development and may contain bugs or incomplete features.
+1. This software may  contain bugs or incomplete features.
 
 2. Commercial redistribution or resale of SciCalX is NOT permitted without
    prior written permission from the author.
@@ -21,11 +20,9 @@ educational, or internal business purposes, subject to the following conditions:
    author be liable for any claim, damages, or other liability, whether in an
    action of contract, tort, or otherwise, arising from the use of this software.
 
-By clicking "Next" during installation, you agree to the above terms.
+
 
 ———————————————————————————
 SciCalX is a scientific calculator app developed using Electron Framework.
-It includes a formula/equation reference library for Physics, Chemistry,
-Biology, and Math. Unit converters and smooth UI animations included.
-Dark and Light mode supported.
+
 ———————————————————————————
