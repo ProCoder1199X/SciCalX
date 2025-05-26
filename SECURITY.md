@@ -4,10 +4,12 @@
 
 | Version | Supported          |
 |---------|--------------------|
-| 1.0.0-alpha.1 | ✅ |
-|1.0.0-beta.1 | ✅️ | 
+| 1.0.0-alpha.1 |❌  |
+|1.0.0-beta.1 | ❌ | 
+| 1.0.0  | ✅  |
 
-The latest versions Alpha and Beta are  currently supported. Future stable versions will have wider support.
+The Latest release (v1.0.0) has support. 
+Previous alpha and beta versions are not supported.
 
 ## Reporting a Vulnerability
 
